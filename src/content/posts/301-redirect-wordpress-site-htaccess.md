@@ -59,6 +59,7 @@ There are some plugins that can help you do this if you’re not very savvy with
 
 **Step #4**: Edit Your .htaccess File: Replace the existing code with the following code:
 
+```apache
 # Use PHP 5.4
 # Use PHP54 as default
 AddHandler application/x-httpd-php54 .php
@@ -80,6 +81,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 # END WordPress
+```
 
 **Important:** Make sure you replace myoldwebsite.com with your old domain name in both instances. Likewise, replace mynewdomaindotcom with your new domain.
 
@@ -97,6 +99,7 @@ What If you want to redirect the entire of the old domain (and not just blog pos
 
 Instead of the previous code, paste the following code in your old site’s .htaccess file.
 
+```apache
 RewriteEngine On
 RewriteRule ^(.*)$ https://mynewdomain.com/$1 [R,L]
 
@@ -108,6 +111,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 # END WordPress
+```
 
 Once you have saved your work and checked that everything is working well, head over to Google Console (Webmaster Tools) and tell Google Search Engine about the transfer.
 
