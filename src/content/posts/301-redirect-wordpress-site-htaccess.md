@@ -63,7 +63,7 @@ There are some plugins that can help you do this if you’re not very savvy with
 
 `# END WordPress`
 
-**Important:** Make sure you replace myoldwebsite.com with your old domain name in both instances. Likewise, replace http://mynewdomain.com with your new domain.
+**Important:** Make sure you replace myoldwebsite.com with your old domain name in both instances. Likewise, replace mynewdomaindotcom with your new domain.
 
 Please, note that in both instances of RewriteCond, you need not add http or https to your old domain URL. However, in RewriteRule, you need to add the http or https to your new domain.
 
