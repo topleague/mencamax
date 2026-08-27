@@ -32,7 +32,7 @@ Whoa! [Facebook](http://www.facebook.com/texaholic) is everywhere! Facebook is t
 
 ## \#2- Don’t Tweet ‘n’ Drive
 
-What was the last time you survived an accident? On the road? No, it was while you were running down the stairs, updating your [Twitter profile](http://twitter.com/sushantsahoo). You missed a step in the attempt of tweeting those 140 characters! Go get a life, seriously!
+What was the last time you survived an accident? On the road? No, it was while you were running down the stairs, updating your [Twitter profile](https://x.com/ugosus). You missed a step in the attempt of tweeting those 140 characters! Go get a life, seriously!
 
 ## \#1- One Night Stand with Torrents
 
