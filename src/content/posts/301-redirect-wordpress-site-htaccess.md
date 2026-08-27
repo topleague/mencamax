@@ -59,9 +59,27 @@ There are some plugins that can help you do this if you’re not very savvy with
 
 **Step #4**: Edit Your .htaccess File: Replace the existing code with the following code:
 
-`#Use PHP 5.4<br></br># Use PHP54 as default<br></br>AddHandler application/x-httpd-php54 .php<br></br>suPHP_ConfigPath /opt/php54/lib<br></br>RewriteEngine on<br></br>RewriteCond %{HTTP_HOST} ^myoldwebsite.com [NC,OR]<br></br>RewriteCond %{HTTP_HOST} ^www.myoldwebsite.com [NC]<br></br>RewriteRule ^(.*)$ http://mynewdomain.com/$1 [L,R=301,NC]<br></br># BEGIN WPSuperCache<br></br># END WPSuperCache<br></br># BEGIN WordPress<br></br>RewriteEngine On<br></br>RewriteBase /<br></br>RewriteRule ^index\.php$ - [L]<br></br>RewriteCond %{REQUEST_FILENAME} !-f<br></br>RewriteCond %{REQUEST_FILENAME} !-d<br></br>RewriteRule . /index.php [L]``<br></br>`
+# Use PHP 5.4
+# Use PHP54 as default
+AddHandler application/x-httpd-php54 .php
+suPHP_ConfigPath /opt/php54/lib
 
-`# END WordPress`
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^myoldwebsite.com [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.myoldwebsite.com [NC]
+RewriteRule ^(.*)$ http://mynewdomain.com/$1 [L,R=301,NC]
+
+# BEGIN WPSuperCache
+# END WPSuperCache
+
+# BEGIN WordPress
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+# END WordPress
 
 **Important:** Make sure you replace myoldwebsite.com with your old domain name in both instances. Likewise, replace mynewdomaindotcom with your new domain.
 
@@ -79,7 +97,17 @@ What If you want to redirect the entire of the old domain (and not just blog pos
 
 Instead of the previous code, paste the following code in your old site’s .htaccess file.
 
-`RewriteEngine On<br></br>RewriteRule ^(.*)$ https://mynewdomain.com/$1 [R,L]<br></br># BEGIN WordPress<br></br>RewriteEngine On<br></br>RewriteBase /<br></br>RewriteRule ^index\.php$ - [L]<br></br>RewriteCond %{REQUEST_FILENAME} !-f<br></br>RewriteCond %{REQUEST_FILENAME} !-d<br></br>RewriteRule . /index.php [L]<br></br># END WordPress`
+RewriteEngine On
+RewriteRule ^(.*)$ https://mynewdomain.com/$1 [R,L]
+
+# BEGIN WordPress
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+# END WordPress
 
 Once you have saved your work and checked that everything is working well, head over to Google Console (Webmaster Tools) and tell Google Search Engine about the transfer.
 
@@ -99,7 +127,7 @@ At this point, Google may already have tracked the 301 redirection and ticked th
 
 Google Console will confirm your request and show you a box stating “Submitted”. It also allows you to withdraw your request at any time in the future.
 
-Go to Google Search, and type site:myolddomain.com
+Go to Google Search, and type site:myolddomain dot com
 
 You will see a list of URLs from your old domain that Google has indexed so far. In a few weeks after your submission for the Change of Address request, you should see those links disappear.
 
