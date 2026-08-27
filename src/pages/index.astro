@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import Sidebar from '@/components/Sidebar.astro';
+import { SITE } from '@/site.config';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const tagCounts = new Map<string, number>();
+allPosts.forEach(p => p.data.tags.forEach((t: string) => tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1)));
+const topTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+---
+<BaseLayout>
+  <section class="mb-12">
+    <h1 class="hero-weight text-4xl sm:text-5xl mb-3">Hey, I'm {SITE.author}</h1>
+    <p class="text-[var(--ink-soft)] max-w-xl">{SITE.tagline}</p>
+  </section>
+  <div class="grid lg:grid-cols-[1fr_300px] gap-12">
+    <div>
+      {allPosts.length > 0
+        ? allPosts.map(post => <PostCard post={post} />)
+        : <p class="text-[var(--ink-soft)]">Add Markdown files to <code>src/content/posts/</code> to see them here.</p>}
+    </div>
+    <Sidebar tags={topTags} />
+  </div>
+</BaseLayout>

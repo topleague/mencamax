@@ -1,0 +1,15 @@
+---
+import { formatDate } from '@/utils/formatDate';
+import { SITE } from '@/site.config';
+const { author, avatar, date, align = 'row' } = Astro.props;
+const initials = (author || SITE.author).split(' ').map((w: string) => w[0]).slice(0, 2).join('').toUpperCase();
+---
+<div class:list={["flex gap-3 items-center", align === 'col' ? "flex-col text-center" : "flex-row"]}>
+  {avatar
+    ? <img src={avatar} alt={author} class="h-11 w-11 rounded-full object-cover" />
+    : <span class="avatar-fallback h-11 w-11 rounded-full text-sm">{initials}</span>}
+  <div class:list={[align === 'col' ? "text-center" : ""]}>
+    <p class="font-bold leading-tight">{author}</p>
+    <p class="text-xs text-[var(--ink-soft)] uppercase tracking-wide">{formatDate(date)}</p>
+  </div>
+</div>

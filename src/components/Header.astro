@@ -1,0 +1,60 @@
+---
+import ThemeToggle from '@/components/ThemeToggle.astro';
+import SearchButton from '@/components/SearchButton.astro';
+import { SITE, NAV_LINKS } from '@/site.config';
+const path = Astro.url.pathname;
+---
+<header class="border-b sticky top-0 z-40 bg-[var(--paper)]" style="border-color: var(--line)">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="/" class="hero-weight text-2xl tracking-tight">{SITE.name}</a>
+
+    <nav class="hidden md:flex items-center gap-6">
+      {NAV_LINKS.map(link => (
+        <a href={link.href}
+           class:list={["text-sm uppercase tracking-wide transition-colors",
+             (path === link.href || (link.href !== '/' && path.startsWith(link.href)))
+               ? 'text-[var(--accent)]' : 'text-[var(--ink-soft)] hover:text-[var(--ink)]']}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Search + theme toggle render exactly once, visible at every breakpoint -->
+    <div class="flex items-center gap-2">
+      <SearchButton />
+      <ThemeToggle />
+      <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" class="md:hidden p-2 rounded-full hover:bg-[var(--surface)]">
+        <svg id="icon-hamburger" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+        <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="md:hidden border-t px-6 py-4 flex flex-col gap-4" style="border-color: var(--line)">
+    {NAV_LINKS.map(link => (
+      <a href={link.href}
+         class:list={["text-sm uppercase tracking-wide",
+           (path === link.href || (link.href !== '/' && path.startsWith(link.href)))
+             ? 'text-[var(--accent)]' : 'text-[var(--ink-soft)]']}>
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<script is:inline>
+  const btn = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-hamburger');
+  const iconClose = document.getElementById('icon-close');
+  btn?.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    iconOpen.classList.toggle('hidden', isOpen);
+    iconClose.classList.toggle('hidden', !isOpen);
+  });
+</script>

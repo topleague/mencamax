@@ -1,0 +1,40 @@
+---
+import { SITE } from '@/site.config';
+const year = new Date().getFullYear();
+const initials = SITE.author.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+---
+<footer class="border-t mt-16" style="border-color: var(--line)">
+  <div class="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-12">
+    <div class="text-center md:text-left">
+      {SITE.authorAvatar
+        ? <img src={SITE.authorAvatar} alt={SITE.author} class="h-20 w-20 rounded-full object-cover mx-auto md:mx-0 mb-4" />
+        : <span class="avatar-fallback h-20 w-20 rounded-full text-xl mx-auto md:mx-0 mb-4 flex">{initials}</span>}
+      <h3 class="font-bold text-lg mb-2">{SITE.author}</h3>
+      <p class="text-[var(--ink-soft)] mb-4 max-w-sm mx-auto md:mx-0">{SITE.authorBio}</p>
+      {SITE.social.length > 0 && (
+        <div class="flex gap-4 justify-center md:justify-start">
+          {SITE.social.map(s => <a href={s.href} class="text-sm text-[var(--ink-soft)] hover:text-[var(--accent)]">{s.label}</a>)}
+        </div>
+      )}
+    </div>
+
+    <div>
+      <details class="md:hidden mb-2" open={false}>
+        <summary class="cursor-pointer font-bold py-2">Gallery</summary>
+        <div class="grid grid-cols-3 gap-2 mt-2">
+          {SITE.gallery.map(src => <img src={src} alt="" class="aspect-square object-cover rounded" />)}
+        </div>
+      </details>
+      <div class="hidden md:block">
+        <h3 class="font-bold text-lg mb-4">Gallery</h3>
+        <div class="grid grid-cols-3 gap-2">
+          {SITE.gallery.map(src => <img src={src} alt="" class="aspect-square object-cover rounded" />)}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t py-6 text-center text-sm text-[var(--ink-soft)]" style="border-color: var(--line)">
+    © {year} {SITE.name}. All rights reserved.
+  </div>
+</footer>

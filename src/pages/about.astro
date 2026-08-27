@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/site.config';
+---
+<BaseLayout title="About">
+  <h1 class="hero-weight text-4xl mb-8">About</h1>
+  <div class="prose">
+    <p>Hi, I'm {SITE.author}. {SITE.tagline}</p>
+    <p>Edit this page directly at <code>src/pages/about.astro</code>.</p>
+  </div>
+</BaseLayout>

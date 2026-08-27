@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Elements">
+  <h1 class="hero-weight text-4xl mb-10">Elements</h1>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">Typography</h2>
+    <p class="hero-weight text-4xl mb-2">Heading 900</p>
+    <p class="font-bold text-2xl mb-2">Heading 700</p>
+    <p class="mb-2">Body text 400 weight — the quick brown fox jumps over the lazy dog.</p>
+    <p class="text-[var(--ink-soft)]">Muted secondary text.</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">Buttons</h2>
+    <div class="flex gap-3">
+      <button class="px-5 py-2 rounded-full bg-[var(--accent)] text-white font-bold">Solid</button>
+      <button class="px-5 py-2 rounded-full border font-bold" style="border-color: var(--line)">Ghost</button>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-4">Tags</h2>
+    <div class="flex gap-2 flex-wrap">
+      <span class="tag-pill">design</span>
+      <span class="tag-pill">writing</span>
+      <span class="tag-pill">life</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-bold mb-4">Blockquote</h2>
+    <blockquote class="prose"><p>You must be the change you wish to see in the world.</p></blockquote>
+  </section>
+</BaseLayout>
