@@ -16,6 +16,8 @@ Bhubaneswar has always been a city of contrasts, where old traditions and modern
 
 This is a test article for the Menca theme and its Markdown-based publishing workflow. The purpose is to verify that an article can be added directly to the repository, processed by Astro, and published through Cloudflare without requiring WordPress or another content-management system.
 
+![wide: caption](https://menca-astro.netlify.app/_astro/02.DOKixJDL_Zx2VPF.webp)
+
 The article also gives us an opportunity to test the theme's typography, responsive layout, metadata, URL structure, and image-handling capabilities.
 
 <p class="hero-weight text-4xl mb-2">Synergistically evolve</p>
