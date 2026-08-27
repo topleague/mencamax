@@ -2,6 +2,7 @@
 title: "A journey of a thousand leagues"
 date: "2014-08-21"
 excerpt: "A test article for the Menca theme and its Markdown publishing workflow."
+authorAvatar: "https://susanta.com/wp-content/uploads/2026/08/Susanta-Profile-Pic-removebg-preview.png"
 layout: "split"
 coverUrl: "https://menca-astro.netlify.app/_astro/06-2.CMjIVeW4_1zJuHT.webp"
 tags:
