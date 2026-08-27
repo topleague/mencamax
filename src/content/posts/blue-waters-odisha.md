@@ -2,6 +2,7 @@
 title: "A journey of a thousand leagues"
 date: "2014-08-21"
 excerpt: "A test article for the Menca theme and its Markdown publishing workflow."
+layout: "split"
 coverUrl: "https://menca-astro.netlify.app/_astro/06-2.CMjIVeW4_1zJuHT.webp"
 tags:
   - bhubaneswar
