@@ -6,8 +6,9 @@ const coverUrl = post.data.coverUrl ?? null;
 ---
 <article class="grid sm:grid-cols-[220px_1fr] gap-6 py-8 border-b" style="border-color: var(--line)">
   <a href={`/${post.id}/`} class="block aspect-[4/3] overflow-hidden rounded-md bg-[var(--surface)]">
-    {cover ? <img src={cover.src} alt={post.data.title} class="w-full h-full object-cover" /> :
-     coverUrl ? <img src={coverUrl} alt={post.data.title} class="w-full h-full object-cover" /> : null}
+  {cover ? <img src={cover.src} alt={post.data.title} class="w-full h-full object-cover" /> :
+  coverUrl ? <img src={coverUrl} alt={post.data.title} class="w-full h-full object-cover" /> :
+  <img src="/images/placeholder.jpeg" alt="" class="w-full h-full object-cover" />}
   </a>
   <div>
     <p class="text-xs uppercase tracking-wide text-[var(--ink-soft)] mb-2">{formatDate(post.data.date)}</p>
