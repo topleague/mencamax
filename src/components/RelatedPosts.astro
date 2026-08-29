@@ -2,19 +2,31 @@
 import { formatDate } from '@/utils/formatDate';
 const { posts } = Astro.props;
 ---
+
 {posts.length > 0 && (
   <section class="mt-16 pt-10 border-t" style="border-color: var(--line)">
     <h2 class="text-2xl font-bold mb-6">You may also like</h2>
+
     <div class="grid sm:grid-cols-3 gap-6">
       {posts.map((post: any) => {
         const cover = post.data.cover?.src ?? post.data.coverUrl ?? null;
+
         return (
           <a href={`/${post.id}/`} class="related-card block group">
             <div class="aspect-[4/3] overflow-hidden rounded-md bg-[var(--surface)] mb-3">
-              {cover && <img src={cover} alt={post.data.title} class="w-full h-full object-cover" />}
+              {cover
+                ? <img src={cover} alt={post.data.title} class="w-full h-full object-cover" />
+                : <img src="/images/placeholder.jpeg" alt="" class="w-full h-full object-cover" />
+              }
             </div>
-            <p class="text-xs uppercase tracking-wide text-[var(--ink-soft)] mb-1">{formatDate(post.data.date)}</p>
-            <h3 class="related-title font-bold leading-snug">{post.data.title}</h3>
+
+            <p class="text-xs uppercase tracking-wide text-[var(--ink-soft)] mb-1">
+              {formatDate(post.data.date)}
+            </p>
+
+            <h3 class="related-title font-bold leading-snug">
+              {post.data.title}
+            </h3>
           </a>
         );
       })}
