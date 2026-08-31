@@ -10,7 +10,7 @@ interface Props {
   image?: string;
 }
 const { title, description = SITE.description, image } = Astro.props;
-const pageTitle = title ? `${title} | ${SITE.name}` : SITE.name;
+const pageTitle = title ? `${title} | ${SITE.name}` : SITE.seoTitle;
 ---
 <!doctype html>
 <html lang="en">
