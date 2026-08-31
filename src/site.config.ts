@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Susanta",
   tagline: "Designs, talks, and writes about web, health, and life.",
-  description: "A clean, editorial Markdown blog.",
+  description: "Designs, talks, and writes about web, health, and life.",
   author: "Susanta",
   // authorAvatar: "https://susanta.com/wp-content/uploads/2025/12/Susanta-Profile-Pic.jpeg", // optional URL — falls back to initials circle if blank
   authorAvatar: "/images/susanta-avatar.jpeg", // optional URL — use the porfile photo image folder
