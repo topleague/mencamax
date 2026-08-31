@@ -1,5 +1,6 @@
 export const SITE = {
   name: "Susanta",
+  seoTitle: "Susanta Sahoo | Digital Marketing, SEO & WordPress",
   tagline: "Designs, talks, and writes about web, health, and life.",
   description: "Designs, talks, and writes about web, health, and life.",
   author: "Susanta",
