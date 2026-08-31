@@ -6,7 +6,7 @@ export const SITE = {
   // authorAvatar: "https://susanta.com/wp-content/uploads/2025/12/Susanta-Profile-Pic.jpeg", // optional URL — falls back to initials circle if blank
   authorAvatar: "/images/susanta-avatar.jpeg", // optional URL — use the porfile photo image folder
   authorBio: "Designs, talks, and writes about web, health, and life.",
-  email: "you@example.com",
+  email: "go@susanta.top",
   social: [
     // { label: 'Twitter', href: 'https://twitter.com/yourhandle' },
   ] as { label: string; href: string }[],
