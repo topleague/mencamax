@@ -35,5 +35,13 @@ const pageTitle = title ? `${title} | ${SITE.name}` : SITE.seoTitle;
     <slot />
   </main>
   <Footer />
+
+<script is:inline>
+  document.addEventListener('error', (event) => {
+    if (event.target.tagName === 'IMG') {
+      event.target.style.display = 'none';
+    }
+  }, true);
+</script>
 </body>
 </html>
