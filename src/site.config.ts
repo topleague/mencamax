@@ -7,7 +7,7 @@ export const SITE = {
   // authorAvatar: "https://susanta.com/wp-content/uploads/2025/12/Susanta-Profile-Pic.jpeg", // optional URL — falls back to initials circle if blank
   // authorAvatar: "/images/susanta-avatar.jpeg", // optional URL — use the porfile photo image folder
   // authorAvatar: "https://github.com/topleague/mencamax/blob/main/public/images/susanta-avatar.jpeg", // optional URL — use the porfile photo image folder
-  authorAvatar: "authorAvatar: "raw.githubusercontent.com/topleague/mencamax/main/public/images/susanta-avatar.jpeg",", 
+  authorAvatar: "https://raw.githubusercontent.com/topleague/mencamax/main/public/images/susanta-avatar.jpeg",
   authorBio: "Designs, talks, and writes about web, health, and life.",
   email: "go@susanta.top",
   social: [
