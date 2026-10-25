@@ -1,5 +1,5 @@
 ---
-title: Are SundayRest Memory Mattress Worth Your Money?
+title: Is SundayRest Memory Mattress Worth Your Money?
 date: 2019-08-20
 excerpt: I heard about Sunday Mattress from a friend of mine this past year. He was
   upbeat about his latest purchase — the SundayRest Memory Plus 4 Mattress. A year
